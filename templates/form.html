@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Predictor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <h1>Iris Predictor</h1>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+
+    <div class="card">
+
+        <form action="/predict" method="POST">
+            <label for="sepal_length">Sepal Length (cm):</label>
+            <input type="number" id="sepal_length" name="sepal_length" step="any" min="0.1" max="10"
+                value="{{ form_data.sepal_length if form_data else '' }}" required>
+
+            <label for="sepal_width">Sepal Width (cm):</label>
+            <input type="number" id="sepal_width" name="sepal_width" step="any" min="0.1" max="10"
+                value="{{ form_data.sepal_width if form_data else '' }}" required>
+
+            <label for="petal_length">Petal Length (cm):</label>
+            <input type="number" id="petal_length" name="petal_length" step="any" min="0.1" max="10"
+                value="{{ form_data.petal_length if form_data else '' }}" required>
+
+            <label for="petal_width">Petal Width (cm):</label>
+            <input type="number" id="petal_width" name="petal_width" step="any" min="0.1" max="10"
+                value="{{ form_data.petal_width if form_data else '' }}" required>
+
+            <button type="submit">Predict</button>
+
+        </form>
+    </div>
+</body>
+
+</html>
