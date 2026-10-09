@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Iris Predictor</h1>
+    <Div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="card">
+        <p>The predicted species is: <span class="species">{{ prediction }}</span></p>
+        <a href="/">Predict Another</a>
+    </div>
+</body>
+
+</html>
